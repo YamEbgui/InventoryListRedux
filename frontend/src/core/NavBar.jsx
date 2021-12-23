@@ -4,12 +4,12 @@ import logoImage from "../images/InventoryIcon.jpg";
 export default function NavBar() {
   return (
     <Navbar bg="warning" variant="light" expand="lg">
-      <Container>
-        <Navbar.Brand href="#home" className="h1">
+      <Container className="d-flex flex-row justify-content-center">
+        <Navbar.Brand href="#home" className="h1 text-center">
           <img
             src={logoImage}
-            width="60"
-            height="45"
+            width="40"
+            height="30"
             className="d-inline-block align-top"
             alt="Weather App logo"
           />
