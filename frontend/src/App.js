@@ -1,12 +1,18 @@
 import FormCard from "./core/FormCard";
 import NavBar from "./core/NavBar";
-import WorkerForm from "./core/WorkerForm";
+import workerReducer from "./reducers/workerReducer";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import Body from "./core/Body";
+
+const store = createStore(workerReducer);
+
 function App() {
   return (
-    <div className="App">
+    <Provider store={store}>
       <NavBar />
-      <FormCard />
-    </div>
+      <Body />
+    </Provider>
   );
 }
 
