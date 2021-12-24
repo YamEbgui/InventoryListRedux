@@ -1,11 +1,12 @@
-import FormCard from "./core/FormCard";
+//import components
 import NavBar from "./core/NavBar";
-import workerReducer from "./reducers/workerReducer";
+import Body from "./core/Body";
+//import for redux-state management
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-import Body from "./core/Body";
+import rootReducer from "./reducers";
 
-const store = createStore(workerReducer);
+const store = createStore(rootReducer);
 
 function App() {
   return (
