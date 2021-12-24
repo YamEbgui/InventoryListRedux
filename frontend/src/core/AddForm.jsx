@@ -1,11 +1,28 @@
 import React from "react";
 import { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { addItem } from "../actions";
 
 export default function AddForm() {
+  //create states for this component
   const [name, setName] = useState("");
-  const [fullQuantity, setFullQuantity] = useState("");
-  const [currentQuantity, setCurrentQuantity] = useState("");
+  const [fullQuantity, setFullQuantity] = useState(null);
+  const [currentQuantity, setCurrentQuantity] = useState(null);
+
+  const dispatch = useDispatch();
+
+  function handleSubmit({ target }) {
+    if (name !== "" && fullQuantity !== null) {
+      if (currentQuantity !== null) {
+        dispatch(addItem(name, fullQuantity, currentQuantity));
+        return;
+      } else {
+        dispatch(addItem(name, fullQuantity, 0));
+        return;
+      }
+    }
+  }
 
   return (
     <Container>
@@ -42,7 +59,14 @@ export default function AddForm() {
             type="number"
           />
         </Form.Group>
-        <Button variant="warning" type="submit">
+        <Button
+          onClick={(e) => {
+            e.preventDefault();
+            handleSubmit(e);
+          }}
+          variant="warning"
+          type="submit"
+        >
           add
         </Button>
       </Form>

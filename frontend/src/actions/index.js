@@ -7,4 +7,13 @@ function workerEntered(name, workPlace, date) {
   };
 }
 
-export { workerEntered };
+function addItem(name, fullQuantity, currentQuantity) {
+  return {
+    type: "ADD_ITEM",
+    name,
+    fullQuantity,
+    currentQuantity,
+  };
+}
+
+export { workerEntered, addItem };
