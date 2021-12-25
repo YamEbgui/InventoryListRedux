@@ -24,3 +24,32 @@ export function updateQuantityHelper(id, currentQuantity, itemsArray) {
     }
   });
 }
+
+function informationAnalysisForItem({ name, fullQuantity, currentQuantity }) {
+  console.log(name);
+  let str = name;
+  if (!isNaN(currentQuantity)) {
+    if (currentQuantity === fullQuantity) {
+      str = str + "- Full of this product\r\n";
+    } else {
+      str =
+        str +
+        "-" +
+        (fullQuantity - currentQuantity).toString() +
+        " are missing\r\n";
+    }
+  } else {
+    str = str + "-" + fullQuantity.toString() + " are missing\r\n";
+  }
+  return str;
+}
+
+export function informationAnalysis(itemsArray) {
+  console.log(itemsArray);
+  let str = "";
+  itemsArray.forEach((item) => {
+    console.log(informationAnalysisForItem(item));
+    str = str + informationAnalysisForItem(item);
+  });
+  return str;
+}
