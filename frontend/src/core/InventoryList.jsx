@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
 import { Table } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import QuantityInput from "./QuantityInput";
+import Item from "./Item";
 
 export default function InventoryList() {
   const refToList = useRef(null);
   const inventory = useSelector((state) => state.inventory);
-  console.log(inventory);
+
   return (
     <Table
       ref={refToList}
@@ -28,17 +28,7 @@ export default function InventoryList() {
       </thead>
       <tbody>
         {inventory.map((item) => {
-          return (
-            <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.fullQuantity}</td>
-              <td>
-                <QuantityInput />
-              </td>
-              <td></td>
-            </tr>
-          );
+          return <Item key={item.id} item={item} />;
         })}
       </tbody>
     </Table>

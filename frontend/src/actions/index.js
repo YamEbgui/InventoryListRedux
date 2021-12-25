@@ -16,4 +16,12 @@ function addItem(name, fullQuantity, currentQuantity) {
   };
 }
 
-export { workerEntered, addItem };
+function updateQuantity(id, currentQuantity) {
+  return {
+    type: "UPDATE_QUANTITY",
+    id,
+    currentQuantity,
+  };
+}
+
+export { workerEntered, addItem, updateQuantity };

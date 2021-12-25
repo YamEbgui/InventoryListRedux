@@ -1,16 +1,26 @@
 import { fullEquipmentList } from "../db/equipmentList";
-const initialState = fullEquipmentList;
+import { addCurrentPropertyList, updateQuantityHelper } from "../utils";
 
-const inventoryReducer = (
-  state = initialState,
-  { type, name, fullQuantity, currentQuantity }
-) => {
+const initialState = addCurrentPropertyList(fullEquipmentList);
+
+const inventoryReducer = (state = initialState, action) => {
   let id = 0;
-  switch (type) {
+  switch (action.type) {
     case "ADD_ITEM":
       //generate id for new item
       id = Math.max(...state.map((item) => item.id)) + 1;
-      return [...state, { name, fullQuantity, id }];
+      return [
+        ...state,
+        {
+          id,
+          name: action.name,
+          fullQuantity: action.fullQuantity,
+          currentQuantity: action.currentQuantity,
+        },
+      ];
+    case "UPDATE_QUANTITY":
+      console.log(action);
+      return updateQuantityHelper(action.id, action.currentQuantity, state);
     default:
       return state;
   }
