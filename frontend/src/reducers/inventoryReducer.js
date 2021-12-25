@@ -21,7 +21,7 @@ const inventoryReducer = (state = initialState, action) => {
     case "UPDATE_QUANTITY":
       return updateQuantityHelper(action.id, action.currentQuantity, state);
     case "LOGOUT":
-      return initialState;
+      return addCurrentPropertyList(fullEquipmentList);
     default:
       return state;
   }
