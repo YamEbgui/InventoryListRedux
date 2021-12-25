@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
-import { Table } from "react-bootstrap";
+//import for redux state management
 import { useSelector } from "react-redux";
+//import components
 import Item from "./Item";
+import { Table } from "react-bootstrap";
 
 export default function InventoryList() {
   const refToList = useRef(null);

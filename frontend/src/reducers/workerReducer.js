@@ -8,6 +8,10 @@ const workerReducer = (state = initialState, action) => {
         workPlace: action.workPlace,
         date: action.date,
       };
+
+    case "LOGOUT":
+      return initialState;
+
     default:
       return state;
   }

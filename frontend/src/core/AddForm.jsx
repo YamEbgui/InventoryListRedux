@@ -1,9 +1,10 @@
-import React from "react";
-import { useState } from "react";
-import { Button, Container, Form } from "react-bootstrap";
+import React, { useState } from "react";
+//import for redux state management
 import { useDispatch } from "react-redux";
 import { addItem } from "../actions";
+//import components
 import Notification from "./Notification";
+import { Button, Container, Form } from "react-bootstrap";
 
 export default function AddForm() {
   //create states for this component
@@ -22,6 +23,8 @@ export default function AddForm() {
   }
 
   function handleSubmit(event) {
+    //handle input from the user
+    //if input is logical update state, if not show notification that represent the error
     if (name !== "" && !isNaN(fullQuantity)) {
       if (fullQuantity < 1) {
         handleError("Full quantity should be more than 0  ");

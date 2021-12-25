@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+//import for redux state management
 import { useDispatch } from "react-redux";
+//import components
+import { Button, Form } from "react-bootstrap";
+//import helper function
 import { workerEntered } from "../actions";
 
 export default function WorkerForm() {
+  //set states for this component
   const [name, setName] = useState("");
   const [workPlace, setWorkPlace] = useState("");
   const [date, setDate] = useState(null);

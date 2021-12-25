@@ -26,7 +26,6 @@ export function updateQuantityHelper(id, currentQuantity, itemsArray) {
 }
 
 function informationAnalysisForItem({ name, fullQuantity, currentQuantity }) {
-  console.log(name);
   let str = name;
   if (!isNaN(currentQuantity)) {
     if (currentQuantity === fullQuantity) {
@@ -45,10 +44,8 @@ function informationAnalysisForItem({ name, fullQuantity, currentQuantity }) {
 }
 
 export function informationAnalysis(itemsArray) {
-  console.log(itemsArray);
   let str = "";
   itemsArray.forEach((item) => {
-    console.log(informationAnalysisForItem(item));
     str = str + informationAnalysisForItem(item);
   });
   return str;

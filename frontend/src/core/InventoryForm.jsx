@@ -1,8 +1,9 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+//import components
 import AddForm from "./AddForm";
 import InventoryList from "./InventoryList";
 import SubmitButton from "./SubmitButton";
+import { Container } from "react-bootstrap";
 
 export default function InventoryForm() {
   return (

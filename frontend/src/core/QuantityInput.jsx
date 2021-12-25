@@ -1,7 +1,9 @@
 import React from "react";
-import { updateQuantity } from "../actions";
-import { FormControl, InputGroup } from "react-bootstrap";
+//import for redux state management
 import { useDispatch } from "react-redux";
+import { updateQuantity } from "../actions";
+//import components
+import { FormControl, InputGroup } from "react-bootstrap";
 
 export default function QuantityInput({ id, fullQuantity, currentQuantity }) {
   const dispatch = useDispatch();

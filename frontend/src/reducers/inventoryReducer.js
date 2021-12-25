@@ -19,8 +19,9 @@ const inventoryReducer = (state = initialState, action) => {
         },
       ];
     case "UPDATE_QUANTITY":
-      console.log(action);
       return updateQuantityHelper(action.id, action.currentQuantity, state);
+    case "LOGOUT":
+      return initialState;
     default:
       return state;
   }

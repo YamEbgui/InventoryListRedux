@@ -1,5 +1,7 @@
 import React from "react";
+//import for redux state management
 import { useSelector } from "react-redux";
+//import components
 import FormCard from "./FormCard";
 import InventoryForm from "./InventoryForm";
 

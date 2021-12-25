@@ -1,4 +1,5 @@
 import React from "react";
+//import component
 import QuantityInput from "./QuantityInput";
 
 export default function Item({

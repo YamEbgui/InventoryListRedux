@@ -24,4 +24,10 @@ function updateQuantity(id, currentQuantity) {
   };
 }
 
-export { workerEntered, addItem, updateQuantity };
+function logout() {
+  return {
+    type: "LOGOUT",
+  };
+}
+
+export { workerEntered, addItem, updateQuantity, logout };
